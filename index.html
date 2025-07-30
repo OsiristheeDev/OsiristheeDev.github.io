@@ -1,40 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
-  <meta charset="UTF-8">
-  <title>Tajairi TIMES</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tajairi | Home</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind config MUST come before the CDN script -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header>
-    <header class="top-bar">
-    <div class="left-icon">
-      🔍 <!-- You can replace with an actual magnifying glass icon -->
-    </div>
-    <div class="title">THE<BR> NEW <span class="vintage-text">TAJAIRI.COM</span></div>
-    <div class="right-menu">
-      <a href="#contact">Contact</a>
-      <a href="#arcs">ARCS</a>
-      <a href="#search">Search</a>
-    </div>
+
+<!-- Dark mode is applied to the <html> element -->
+<body class="bg-white text-gray-900 font-sans p-6 dark:bg-[#1a1d2c] dark:text-[#E27D60]">
+
+  <!-- Dark Mode Toggle Button -->
+  <div class="flex justify-end mb-4">
+    <button
+      onclick="document.documentElement.classList.toggle('dark')"
+      class="bg-gray-200 dark:bg-gray-800 text-sm px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition"
+    >
+      Toggle Dark Mode
+    </button>
+  </div>
+
+  <!-- Header -->
+  <header class="flex justify-between items-center border-b pb-4 mb-6 border-gray-300 dark:border-gray-600 ">
+    <h1 class="text-4xl font-bold tracking-wide">
+      <span class="playfair-display-sc-bold-italic text-black dark:text-[#E27D60]">TAJAIRI</span>
+    
+    </h1>
+    <nav class="flex gap-4">
+      <a href="#" class="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600">Home</a>
+      <a href="#" class="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600">Projects</a>
+    </nav>
   </header>
-    <div class="main-headline">
-      <h1>DID I MAKE A MISTAKE GOING TO NEW ZEALAND?</h1>
-      <p class="subhead">Is a stable career better than following your dreams?
-      </p>
+
+  <!-- Headline Section -->
+  <section class="mb-10">
+    <div class="border rounded-xl p-4 shadow-md max-w-xl mx-auto border-gray-300 dark:border-gray-700">
+      <h2 class="text-xl font-semibold mb-2">Headline</h2>
+      <img 
+        src="images/RoyaleAward.png" 
+        alt="Headline Photo" 
+        class="rounded-xl w-full mb-2"
+      />
+      <p class="text-gray-700 dark:text-gray-300">Latest Article</p>
     </div>
-  </header>
-<section class="feature-image">
-    <img src="images/Otautahi.jpg" alt="Picture of Otautahi" />
   </section>
 
-  <section class="quote">
-    <p>“And so, suddenly, we’re leaning much harder into that horror movie territory that we love. It was fun to make that change”</p>
+  <!-- Arcs Section -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">ARCS</h2>
+    <h3 class="text-xl font-medium mb-2">New Zealand</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 1</div>
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 2</div>
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 3</div>
+    </div>
   </section>
 
-  
 </body>
 </html>
