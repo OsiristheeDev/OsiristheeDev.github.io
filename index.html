@@ -6,8 +6,8 @@
   <title>Tajairi | Home</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <!-- Tailwind config MUST come before the CDN script -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,53 +20,106 @@
 </head>
 
 <!-- Dark mode is applied to the <html> element -->
-<body class="bg-white text-gray-900 font-sans p-6 dark:bg-[#1a1d2c] dark:text-[#E27D60]">
+<body class="bg-white text-[#111111] font-sans p-6 dark:bg-[#1a1d2c] dark:text-white scroll-smooth">
 
-  <!-- Dark Mode Toggle Button -->
-  <div class="flex justify-end mb-4">
-    <button
-      onclick="document.documentElement.classList.toggle('dark')"
-      class="bg-gray-200 dark:bg-gray-800 text-sm px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition"
-    >
-      Toggle Dark Mode
-    </button>
+  <!-- Sticky Nav Bar -->
+<nav class="fixed top-4 inset-x-0 z-50 px-6 sm:px-12 md:px-24 lg:px-32">
+  <div class="bg-white/70 dark:bg-[#1a1d2c]/70 backdrop-blur-md border border-[#E5E7EB] dark:border-gray-700 shadow-md rounded-full px-8 py-3 flex items-center justify-between text-sm font-medium w-full">
+    <!-- Logo and Title -->
+    <div class="flex items-center gap-3">
+      <img src="images/TajairiLogo.png" alt="Logo" class="h-8 w-auto" />
+      <span class="text-3xl font-bold playfair-display-sc-bold text-black dark:text-[#FF5E9E]">TAJAIRI</span>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex items-center gap-4">
+      <a href="#home" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Home</a>
+      <a href="#projects" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Projects</a>
+      <a href="#contact" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Contact</a>
+      <div class="h-5 w-px bg-gray-400 dark:bg-gray-600 mx-2"></div>
+      <button 
+        onclick="document.documentElement.classList.toggle('dark')"
+        class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform"
+      >
+        Dark Mode
+      </button>
+    </div>
+  </div>
+</nav>
+
+  <!-- Spacer so content doesn't hide behind sticky nav -->
+  <div class="h-10"></div>
+  
+<!-- Card Section -->
+<section class="w-full max-w-4xl px-4 mx-auto my-12 flex flex-col items-center space-y-6">
+
+  <!-- Headline Carousel Card -->
+  <div class="bg-[#ff7f50] rounded-xl shadow-lg w-full overflow-hidden relative">
+    <div class="carousel w-full flex transition-transform duration-500 ease-in-out" id="carousel">
+      <!-- Slide 1 -->
+      <div class="carousel-item w-full shrink-0">
+        <img src="images/Otautahi.jpg" alt="Headline 1" class="w-full h-64 md:h-96 object-cover mx-auto rounded-t-xl" />
+        <div class="p-4">
+          <h2 class="text-white text-2xl font-semibold">Headline Title</h2>
+          <p class="text-white text-sm mt-1">Subheadline or short description here</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item w-full shrink-0">
+        <img src="images/AnotherImage1.png" alt="Headline 2" class="w-full h-64 md:h-96 object-cover mx-auto rounded-t-xl" />
+        <div class="p-4">
+          <h2 class="text-white text-2xl font-semibold">New Project Launch</h2>
+          <p class="text-white text-sm mt-1">See what’s cooking behind the scenes</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item w-full shrink-0">
+        <img src="images/AnotherImage2.png" alt="Headline 3" class="w-full h-64 md:h-96 object-cover mx-auto rounded-t-xl" />
+        <div class="p-4">
+          <h2 class="text-white text-2xl font-semibold">Design Spotlight</h2>
+          <p class="text-white text-sm mt-1">A deep dive into the week’s aesthetic</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Dots -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10" id="carousel-dots">
+      <button class="carousel-dot w-2 h-2 bg-white rounded-full opacity-80" data-slide="0"></button>
+      <button class="carousel-dot w-2 h-2 bg-white/50 rounded-full" data-slide="1"></button>
+      <button class="carousel-dot w-2 h-2 bg-white/50 rounded-full" data-slide="2"></button>
+    </div>
   </div>
 
-  <!-- Header -->
-  <header class="flex justify-between items-center border-b pb-4 mb-6 border-gray-300 dark:border-gray-600 ">
-    <h1 class="text-4xl font-bold tracking-wide">
-      <span class="playfair-display-sc-bold-italic text-black dark:text-[#E27D60]">TAJAIRI</span>
-    
-    </h1>
-    <nav class="flex gap-4">
-      <a href="#" class="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600">Home</a>
-      <a href="#" class="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600">Projects</a>
-    </nav>
-  </header>
-
-  <!-- Headline Section -->
-  <section class="mb-10">
-    <div class="border rounded-xl p-4 shadow-md max-w-xl mx-auto border-gray-300 dark:border-gray-700">
-      <h2 class="text-xl font-semibold mb-2">Headline</h2>
-      <img 
-        src="images/RoyaleAward.png" 
-        alt="Headline Photo" 
-        class="rounded-xl w-full mb-2"
-      />
-      <p class="text-gray-700 dark:text-gray-300">Latest Article</p>
+  <!-- Two Mini Cards Below -->
+  <div class="flex gap-6 w-full justify-center">
+    <!-- Song of the Week -->
+    <div class="bg-[#1fc7b2] text-white p-4 rounded-xl shadow-md w-1/2">
+      <h3 class="font-semibold text-lg mb-1">🎵 Song of the Week</h3>
+      <p class="text-sm">"Track Title" by Artist Name</p>
     </div>
-  </section>
+
+    <!-- Interesting Article -->
+    <div class="bg-[#7e5bef] text-white p-4 rounded-xl shadow-md w-1/2">
+      <h3 class="font-semibold text-lg mb-1">📚 Interesting Article</h3>
+      <p class="text-sm">"Article Title" from Source Name</p>
+    </div>
+  </div>
+</section>
 
   <!-- Arcs Section -->
-  <section>
-    <h2 class="text-2xl font-semibold mb-4">ARCS</h2>
-    <h3 class="text-xl font-medium mb-2">New Zealand</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 1</div>
-      <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 2</div>
-      <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 3</div>
-    </div>
-  </section>
+<section id="projects" class="px-6 sm:px-12 md:px-24 lg:px-32 mt-16">
+  <h2 class="text-4xl font-bold mb-4">Aotearoa</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 1</div>
+    <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 2</div>
+    <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 3</div>
+  </div>
+</section>
+
+<script src="carousel.js"></script>
 
 </body>
 </html>
+
