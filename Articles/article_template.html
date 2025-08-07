@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tajairi | Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind config MUST come before the CDN script -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<!-- Dark mode is applied to the <html> element -->
+<body class="bg-white text-[#111111] font-sans p-6 dark:bg-[#1a1d2c] dark:text-white scroll-smooth">
+
+  <!-- Sticky Nav Bar -->
+<nav class="fixed top-4 inset-x-0 z-50 px-6 sm:px-12 md:px-24 lg:px-32">
+  <div class="bg-white/70 dark:bg-[#1a1d2c]/70 backdrop-blur-md border border-[#E5E7EB] dark:border-gray-700 shadow-md rounded-full px-8 py-3 flex items-center justify-between text-sm font-medium w-full">
+    <!-- Logo and Title -->
+    <div class="flex items-center gap-3">
+      <img src="../images/TajairiLogo.png" alt="Logo" class="h-10 w-auto mt-2" />
+      <span class="text-3xl font-bold playfair-display-sc-bold text-black dark:text-[#FF5E9E]">TAJAIRI</span>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex items-center gap-4">
+      <a href="../index.html" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Home</a>
+      <a href="#projects" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Projects</a>
+      <a href="#contact" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Contact</a>
+      <div class="h-5 w-px bg-gray-400 dark:bg-gray-600 mx-2"></div>
+      <button 
+        onclick="document.documentElement.classList.toggle('dark')"
+        class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform"
+      >
+        Dark Mode
+      </button>
+    </div>
+  </div>
+</nav>
+
+  <!-- Spacer so content doesn't hide behind sticky nav -->
+  <div class="h-10"></div>
+
+  <article class="max-w-3xl mx-auto px-6 py-16 text-[#1f2937] font-sans">
+  <!-- Category Tag -->
+  <span class="inline-block px-4 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-semibold uppercase tracking-wider mb-4">
+    Music
+  </span>
+
+  <!-- Headline -->
+  <h1 class="text-4xl font-extrabold text-orange-500 leading-tight">
+    Artist of the Year: Tyla
+  </h1>
+
+  <!-- Subheadline -->
+  <p class="text-lg text-gray-700 mt-2 mb-6">
+    South Africa’s rising star takes global pop by storm.
+  </p>
+
+  <!-- Featured Image -->
+  <div class="overflow-hidden rounded-xl shadow-lg mb-8">
+    <img
+      src="https://www.essence.com/wp-content/uploads/2023/10/TYLA0004-1-1_v1_LR-scaled.jpg?width=800"
+      alt="Tyla Essence Cover"
+      class="w-full h-96 object-cover object-top"
+    />
+  </div>
+
+  <!-- Article Body -->
+  <div class="prose prose-p:text-gray-800 prose-headings:text-[#1f2937] prose-a:text-orange-500 prose-a:underline hover:prose-a:text-orange-400 max-w-none">
+    <p>
+      The first time I saw Tyla perform, I knew the world would catch on soon.
+      With her hypnotic sound and unmistakable stage presence, she embodies that magnetic
+      <em>energy</em> all the greats do. South Africa, you’ve got a comet on your hands.
+    </p>
+
+    <h2>Style & Presence</h2>
+
+    <p>
+      Her fashion sense? Immaculate. From slick latex to soft mesh, Tyla knows how to
+      use style to underscore her story.
+    </p>
+
+    <blockquote>
+      “I’m not trying to be the next anyone — I’m trying to be the first Tyla.”
+    </blockquote>
+
+    <p>
+      Whether onstage or off, she’s rewriting what it means to be a global African pop star —
+      and we’re lucky to witness it.
+    </p>
+  </div>
+</article>
+
+</body>
+</html>
