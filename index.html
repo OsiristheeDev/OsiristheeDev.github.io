@@ -20,14 +20,14 @@
 </head>
 
 <!-- Dark mode is applied to the <html> element -->
-<body class="bg-white text-[#111111] font-sans p-6 dark:bg-[#1a1d2c] dark:text-white scroll-smooth">
-
+<body class="bg-white text-[#111111] font-sans p-6 dark:bg-black dark-bg-stars dark:text-white scroll-smooth">
+<div class="night-sky hidden dark:block" id="nightSky"></div>
   <!-- Sticky Nav Bar -->
 <nav class="fixed top-4 inset-x-0 z-50 px-6 sm:px-12 md:px-24 lg:px-32">
   <div class="bg-white/70 dark:bg-[#1a1d2c]/70 backdrop-blur-md border border-[#E5E7EB] dark:border-gray-700 shadow-md rounded-full px-8 py-3 flex items-center justify-between text-sm font-medium w-full">
     <!-- Logo and Title -->
     <div class="flex items-center gap-3">
-      <img src="images/TajairiLogo.png" alt="Logo" class="h-8 w-auto" />
+      <img src="images/TajairiLogo.png" alt="Logo" class="h-10 w-auto mt-2" />
       <span class="text-3xl font-bold playfair-display-sc-bold text-black dark:text-[#FF5E9E]">TAJAIRI</span>
     </div>
 
@@ -38,11 +38,12 @@
       <a href="#contact" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Contact</a>
       <div class="h-5 w-px bg-gray-400 dark:bg-gray-600 mx-2"></div>
       <button 
-        onclick="document.documentElement.classList.toggle('dark')"
-        class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform"
-      >
-        Dark Mode
-      </button>
+  onclick="document.documentElement.classList.toggle('dark')"
+  class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform"
+>
+   Dark Mode
+</button>
+
     </div>
   </div>
 </nav>
@@ -58,7 +59,7 @@
     <div class="carousel w-full flex transition-transform duration-500 ease-in-out" id="carousel">
       <!-- Slide 1 -->
       <div class="carousel-item w-full shrink-0">
-        <img src="images/Otautahi.jpg" alt="Headline 1" class="w-full h-64 md:h-96 object-cover mx-auto rounded-t-xl" />
+        <img src="images/Otautahi.jpg" alt="Headline 1" class="w-full h-64 md:h-96 object-cover object-[center_15%] mx-auto rounded-t-xl" />
         <div class="p-4">
           <h2 class="text-white text-2xl font-semibold">Headline Title</h2>
           <p class="text-white text-sm mt-1">Subheadline or short description here</p>
@@ -92,32 +93,153 @@
     </div>
   </div>
 
-  <!-- Two Mini Cards Below -->
-  <div class="flex gap-6 w-full justify-center">
-    <!-- Song of the Week -->
-    <div class="bg-[#1fc7b2] text-white p-4 rounded-xl shadow-md w-1/2">
-      <h3 class="font-semibold text-lg mb-1">🎵 Song of the Week</h3>
-      <p class="text-sm">"Track Title" by Artist Name</p>
-    </div>
-
-    <!-- Interesting Article -->
-    <div class="bg-[#7e5bef] text-white p-4 rounded-xl shadow-md w-1/2">
-      <h3 class="font-semibold text-lg mb-1">📚 Interesting Article</h3>
-      <p class="text-sm">"Article Title" from Source Name</p>
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+  
+  <!-- Song of the Week -->
+  <div class="bg-[#5dd5d0] text-white p-4 rounded-xl shadow-md flex-none basis-full md:basis-[35%] flex flex-col items-center text-center h-full">
+    <h3 class="font-semibold text-2xl mb-2">🎵 Song of the Week</h3>
+    <div class="rounded-lg overflow-hidden w-full h-48">
+      <iframe 
+        class="w-full h-full" 
+        src="https://www.youtube.com/embed/PWf8jHWrK5k?rel=0&modestbranding=1&showinfo=0" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
+
+  <!-- Book of the Week -->
+<div class="bg-[#7e5bef] text-white p-3 rounded-xl shadow-md flex-none basis-full md:basis-[40%] flex flex-col gap-1 items-center h-full">
+  <h3 class="font-semibold text-2xl text-center">📚 Book of the Week</h3>
+
+  <div class="flex flex-col sm:flex-row sm:items-center gap-2 flex-1 w-full">
+    <!-- Text -->
+    <div class="flex-1 ml-4">
+      <p class="text-2xl font-bold">Pet</p>
+      <p class="text-xl italic mb-1">by Akwaeke Emezi</p>
+      <p class="text-l text-yellow-400">
+        ★★★★★
+        <span class="text-white text-xl ml-2 block mt-1">A captivatingly unique debut with a timely message.</span>
+      </p>
+    </div>
+
+    <!-- Book Cover -->
+    <div class="w-28 h-40 flex-shrink-0 mt-3">
+      <a target="_blank" href="https://bookshop.org/p/books/pet-akwaeke-emezi/12112023?ean=9780593175446&next=t">
+      <img src="images/Pet.jpg" alt="Pet book cover" class="w-full h-full object-cover rounded-lg shadow-md" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Invisible height filler -->
+  <div class="flex-1 hidden md:block"></div>
+</div>
+
+</div>
 </section>
 
   <!-- Arcs Section -->
 <section id="projects" class="px-6 sm:px-12 md:px-24 lg:px-32 mt-16">
-  <h2 class="text-4xl font-bold mb-4">Aotearoa</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-    <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 1</div>
-    <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 2</div>
-    <div class="bg-gray-100 dark:bg-gray-800 rounded-full h-40 flex items-center justify-center text-gray-500 dark:text-gray-400">Image 3</div>
+
+<!-- MUSIC ARC CLUSTER -->
+<div class="space-y-4">
+  <h2 class="text-2xl font-bold text-pink-500">🎵 2024 Royale Award Winners</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+    <!-- ARC #1 -->
+    <a target="_blank" href="https://www.youtube.com/watch?v=KcBDKGiKBK4" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600">
+      <img src="Images/Tyla.jpg" alt="Artist of the Year: Tyla" 
+      class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 object-top" />
+      <div class="absolute inset-0 bg-pink-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        <h3 class="text-white text-xl font-bold text-center px-4">New Artist OTY: Tyla</h3>
+      </div>
+    </a>
+
+    <!-- ARC #2 -->
+    <a href="https://www.youtube.com/watch?v=hKwizc5nsWY" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600">
+      <img src="Images/Royale_Award_MO.png" alt="Royale Award on Mount Olympus" 
+      class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-pink-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        <h3 class="text-white text-xl font-bold text-center px-4">The Complete List of Winners</h3>
+      </div>
+    </a>
+
+    <!-- ARC #3 -->
+    <a target="_blank" href="https://www.youtube.com/watch?v=wiALRpD0Ztg&pp=ygUgbWFuIGluIHRoZSBtaXJyb3Iga2VuZHJpY2sgbGFtYXLSBwkJxwkBhyohjO8%3D" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600">
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/93/Kendrick_Lamar_-_GNX.png" alt="Best Performances of 2024" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 object-bottom" />
+      <div class="absolute inset-0 bg-pink-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        <h3 class="text-white text-xl font-bold text-center px-4">Artist OTY: - Kendrick Lamar </h3>
+      </div>
+    </a>
   </div>
+</div>
+<!--
+<section class="hidden-section">
+<div class="space-y-4 mt-12">
+  TRAVEL CLUST
+  <h2 class="text-2xl font-bold text-green-500">✈️ Travel</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    Arc 1 
+    <a href="/articles/nz-spending" class="relative group rounded-xl overflow-hidden shadow-lg bg-green-600">
+      <img src="/images/nz-trip.jpg" alt="How I spent 10k in New Zealand" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-green-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        <h3 class="text-white text-xl font-bold text-center px-4">How I Spent 10k in New Zealand</h3>
+      </div>
+    </a>
+    ARC 2
+    <a href="/articles/visa-run" class="relative group rounded-xl overflow-hidden shadow-lg bg-green-600">
+      <img src="/images/sydney.jpg" alt="Making a Visa Run into a Vacation" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-green-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        <h3 class="text-white text-xl font-bold text-center px-4">Did I Make A Mistake Going to Aotearoa?</h3>
+      </div>
+    </a>
+  </div>
+</div>
+
+</section> -->
+
+  <!-- 2023 CLUSTER -->
+  <div class="space-y-4 mt-12">
+  <h2 class="text-2xl font-bold text-yellow-500">🎵 2023 </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+    <!-- ARC #1 -->
+    <a href="Articles/2023_Royale_Winners.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-yellow-600">
+      <img src="Images/RoyaleAward.png" alt="Rose Gold feminine statue withh an Afro" 
+      class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-pink-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        <h3 class="text-white text-xl font-bold text-center px-4">2023 Royale Award Winners</h3>
+      </div>
+    </a>
+
+    <!-- ARC #2 -->
+    <a href="Articles/Letter_To_Tajair.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-yellow-600">
+      <img src="https://preview.redd.it/bekphnqftcb41.jpg?width=1080&crop=smart&auto=webp&s=8f9410508e9179cbca41927644de18fa9e4c294c" alt="Solo Record OTY: Supernatural-Ariana Grande" 
+      class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 object-top" />
+      <div class="absolute inset-0 bg-pink-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        <h3 class="text-white text-xl font-bold text-center px-4">Letter To My Name Neighbor: Tajair </h3>
+      </div>
+    </a>
+
+    <!-- ARC #3 -->
+    <a href="https://www.youtube.com/watch?v=wiALRpD0Ztg&pp=ygUgbWFuIGluIHRoZSBtaXJyb3Iga2VuZHJpY2sgbGFtYXLSBwkJxwkBhyohjO8%3D" class="relative group rounded-xl overflow-hidden shadow-lg bg-yellow-600">
+      <img src="Images/Red_Demon_Spotify.jpg" alt="Best Performances of 2024" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 " />
+      <div class="absolute inset-0 bg-pink-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        <h3 class="text-white text-xl font-bold text-center px-4">Why I'm No Longer Releasing my Spotify Unwrapped</h3>
+      </div>
+    </a>
+  </div>
+</div>
+</div>
+
 </section>
 
+
+
+<script src="darkmode.js"></script>
+<script src="night_sky.js"></script>
 <script src="carousel.js"></script>
 
 </body>

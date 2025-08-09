@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tajairi | Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind config MUST come before the CDN script -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<!-- Dark mode is applied to the <html> element -->
+<body class="bg-white text-[#111111] font-sans p-6 dark:bg-black dark-bg-stars dark:text-white scroll-smooth">
+<div class="night-sky hidden dark:block" id="nightSky"></div>
+
+  <!-- Sticky Nav Bar -->
+<nav class="fixed top-4 inset-x-0 z-50 px-6 sm:px-12 md:px-24 lg:px-32">
+  <div class="bg-white/70 dark:bg-[#1a1d2c]/70 backdrop-blur-md border border-[#E5E7EB] dark:border-gray-700 shadow-md rounded-full px-8 py-3 flex items-center justify-between text-sm font-medium w-full">
+    <!-- Logo and Title -->
+    <div class="flex items-center gap-3">
+      <img src="../images/TajairiLogo.png" alt="Logo" class="h-10 w-auto mt-2" />
+      <span class="text-3xl font-bold playfair-display-sc-bold text-black dark:text-[#FF5E9E]">TAJAIRI</span>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex items-center gap-4">
+      <a href="../index.html" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Home</a>
+      <a href="#projects" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Projects</a>
+      <a href="#contact" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Contact</a>
+      <div class="h-5 w-px bg-gray-400 dark:bg-gray-600 mx-2"></div>
+      <button 
+        onclick="document.documentElement.classList.toggle('dark')"
+        class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform"
+      >
+        Dark Mode
+      </button>
+    </div>
+  </div>
+</nav>
+
+  <!-- Spacer so content doesn't hide behind sticky nav -->
+  <div class="h-10"></div>
+
+  <article class="max-w-3xl mx-auto px-6 py-16 text-[#1f2937] dark:text-white font-sans">
+  
+    <!-- Category Tag -->
+  <span class="inline-block px-4 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-semibold uppercase tracking-wider mb-4">
+    Essay
+  </span>
+
+  <!-- Headline -->
+  <h1 class="text-4xl font-extrabold text-orange-500 leading-tight">
+    2023 Royale Award Winners 
+  </h1>
+
+  <!-- Subheadline -->
+  <p class="text-lg text-gray-700 mt-2 mb-6 dark:text-gray-300">
+    <i>Eligibility Period: Jan 1st, 2023 - Dec 20th, 2023 </i>
+  </p>
+
+  <!-- Featured Image -->
+  <div class="overflow-hidden rounded-xl shadow-lg mb-8">
+    <img
+      src="https://wwd.com/wp-content/uploads/2023/05/beyonce_obegero_boston_renaissance.jpg?w=1280"
+      alt="Beyonce at the Renaissance World Tour"
+      class="w-full h-96 object-cover object-top"
+    />
+  </div>
+
+  <p class="text-sm text-gray-600 italic text-center mt-2 mb-8 dark:text-gray-400">
+  Artist of The Year: Beyoncé
+</p>
+
+  <!-- Article Body -->
+  <div class="prose text-lg prose-p:text-gray-800 prose-headings:text-[#1f2937] max-w-none space-y-4">
+    <strong><span style="text-decoration:underline;">New Artist of The Year </span> </strong>
+      <p>
+        Any artist or collective who released an album this year that inspired me to explore their discography for the first time.
+      </p>
+<p>
+<div class="bg-[#B76E79] text-white p-4 rounded-xl shadow-md flex-none basis-full md:basis-[35%] flex flex-col items-center text-center h-full"> 
+  <h3 class="font-semibold text-3xl mb-2">New Artist Of The Year</h3>
+
+  <div class="rounded-lg overflow-hidden w-full h-72 mb-4">
+    <iframe 
+      class="w-full h-full" 
+      src="https://www.youtube.com/embed/v_6wE1nOiL4?si=Cf3PIPOiD-ZEACYv" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  
+
+  <!-- Add your text here -->
+  <p class="text-lg leading-relaxed">
+    <strong>That Mexican OT</strong><br><br>
+    From Paul Wall to Megan Thee Stallion, Texas rap has been on. That Mexican OT is its latest herald. His latest album: <em>Lonestar Luchador </em>features a unique combination of regional Tejano music with Southern trap on songs like Barrio to making straight-up saloon music with a modern twist on songs like Cowboy Killer. With a flow that is as smooth as it is interchangeable That Mexican OT embodies Texas rap and pushes it into a bold new direction.
+  </p>
+</div>
+
+<div class="h-3"></div>
+ <!-- Collab of The Year -->
+        <div class="bg-[#8B4A6B] text-white p-4 rounded-xl shadow-md flex-none basis-full md:basis-[35%] flex flex-col items-center text-center h-full">
+            <h3 class="font-semibold text-3xl mb-2">Collab of The Year</h3>
+            <div class="rounded-lg overflow-hidden w-full h-72 mb-4">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/hcqcy6cdCw8?si=aV-2UDCIqMmcknCL"
+                    title="Dalie - Kamo Mphela feat Tyler ICU"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="text-lg leading-relaxed">
+                <strong>Dalie - Kamo Mphela feat Tyler ICU, Khalil Harrison, Baby S.O.N</strong><br><br>
+                Dalie is a group project where everyone did their part, from Kamo Mphela, the hook's headliner and star of the video, to Tyler ICU, one of the producers. Tyler ICU is a certified hitmaker who has produced some of the most infectious Amapiano records of the year. A perfect example of sonic synthesis.
+            </p>
+        </div>
+
+        <div class="h-3"></div>
+
+        <!-- Live Performance of The Year -->
+        <div class="bg-[#DAA520] text-white p-4 rounded-xl shadow-md flex-none basis-full md:basis-[35%] flex flex-col items-center text-center h-full">
+            <h3 class="font-semibold text-3xl mb-2">Live Performance of The Year</h3>
+            <div class="rounded-lg overflow-hidden w-full h-72 mb-4">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/HSd1eTLc91M"
+                    title="Beyoncé Renaissance World Tour"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="text-lg leading-relaxed">
+                <strong><em>Renaissance World Tour, Louisville - Beyoncé</em></strong><br><br>
+                16 years of watching her through a screen still didn't prepare me for the live experience. Beyoncé is the performer of our lives. For three hours, she created a space to escape the world and just let loose. Pure transcendence through performance.
+            </p>
+        </div>
+
+        <div class="h-3"></div>
+
+        <!-- Solo Record of The Year -->
+        <div class="bg-[#6A5ACD] text-white p-4 rounded-xl shadow-md flex-none basis-full md:basis-[35%] flex flex-col items-center text-center h-full">
+            <h3 class="font-semibold text-3xl mb-2">Solo Record of The Year</h3>
+            <div class="rounded-lg overflow-hidden w-full h-72 mb-4">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/yya_NSTpFoA?si=-uUfmGVB-MJgenup"
+                    title="Magic - Kiana Lede"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="text-lg leading-relaxed">
+                <strong>Magic - Kiana Lede</strong><br><br>
+                A recording that was not only on replay, replay, replay but also captured the essence of the year. Kiana Lede's "Magic" represents that perfect solo track that defines a moment in time - infectious, memorable, and utterly captivating from first listen.
+            </p>
+        </div>
+
+        <div class="h-3"></div>
+
+        <!-- Album of the Year -->
+        <div class="bg-[#CD5C5C] text-white p-4 rounded-xl shadow-md flex-none basis-full md:basis-[35%] flex flex-col items-center text-center h-full">
+            <h3 class="font-semibold text-3xl mb-2">Album of The Year</h3>
+            <div class="rounded-lg overflow-hidden w-full h-72 mb-4">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/LQdfkHptCUw?si=5-OewCgDbikFBAOu"
+                    title="Grudges - Kiana Lede"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="text-lg leading-relaxed">
+                <strong>Grudges - Kiana Lede</strong><br><br>
+               "Grudges" represents the pinnacle of artistic vision - every track flows seamlessly into the next, creating a complete listening experience that rewards both casual listeners and deep cuts enthusiasts.
+            </p>
+        </div>
+
+        <div class="h-3"></div>
+
+        <!-- Artist of The Year -->
+        <div class="bg-[#FF6347] text-white p-4 rounded-xl shadow-md flex-none basis-full md:basis-[35%] flex flex-col items-center text-center h-full">
+            <h3 class="font-semibold text-3xl mb-2">Artist of The Year</h3>
+            <div class="rounded-lg overflow-hidden w-full h-72 mb-4">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/HSd1eTLc91M?si=2pceZTRpd82g57WO"
+                    title="Beyoncé"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="text-lg leading-relaxed">
+                <strong>Beyoncé</strong><br><br>
+                Honoring the artist who dominated the year with exceptional creativity, impact, and presence. From Renaissance to the world tour that redefined live performance, Beyoncé continues to set the standard for artistry, creative innovation, and cultural influence. The artist of our lives, indeed.
+            </p>
+        </div>
+</article>
+
+<script src="../darkmode.js"></script>
+<script src="../night_sky.js"></script>
+
+</body>
+</html>
