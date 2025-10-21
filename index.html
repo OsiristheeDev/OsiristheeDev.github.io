@@ -22,14 +22,20 @@
 <!-- Dark mode is applied to the <html> element -->
 <body class="bg-white text-[#111111] font-sans p-6 dark:bg-black dark-bg-stars dark:text-white scroll-smooth">
 <div class="night-sky hidden dark:block" id="nightSky"></div>
-  <!-- Sticky Nav Bar -->
+<!-- Sticky Nav Bar -->
 <nav class="fixed top-4 inset-x-0 z-50 px-6 sm:px-12 md:px-24 lg:px-32">
-  <div class="bg-white/70 dark:bg-[#1a1d2c]/70 backdrop-blur-md border border-[#E5E7EB] dark:border-gray-700 shadow-md rounded-full px-8 py-3 flex items-center justify-between text-sm font-medium w-full">
-    <!-- Logo and Title -->
-    <div class="flex items-center gap-3">
-      <img src="images/TajairiLogo.png" alt="Logo" class="h-10 w-auto mt-2" />
-      <span class="text-3xl font-bold playfair-display-sc-bold text-black dark:text-[#FF5E9E]">TAJAIRI</span>
-    </div>
+  <!-- Main Nav container -->
+  <div class="relative mx-auto">
+    <div class="bg-white/70 dark:bg-[#1a1d2c]/70 backdrop-blur-md border border-[#E5E7EB] dark:border-gray-700 shadow-md rounded-full px-8 py-3 flex items-center justify-between text-sm font-medium w-full">
+      
+      <!-- Logo and Title -->
+      <a href="#home" class="group flex items-center gap-3 shrink-0">
+        <!-- Reverted to your original image path. Ensure this path is correct in your project. -->
+        <img src="images/TajairiLogo.png" alt="Logo" class="h-10 w-auto transition-transform group-hover:rotate-[-10deg] group-hover:scale-110 " onerror="this.onerror=null;this.src='https://placehold.co/40x40/FF5E9E/white?text=T';" />
+        <span class="text-2xl sm:text-3xl justify-center font-bold playfair-display-sc-bold text-black dark:text-[#FF5E9E] [text-shadow:1px_1px_3px_var(--tw-shadow-color)] shadow-gray-400/50 dark:shadow-pink-500/50">
+          TAJAIRI
+        </span>
+      </a>
 
     <!-- Navigation Buttons -->
     <div class="flex items-center gap-4">
@@ -110,12 +116,15 @@
     </div>
   </div>
 
-  <!-- Book of the Week -->
+ <!-- Book of the Week -->
 <div class="bg-[#7e5bef] text-white p-3 rounded-xl shadow-md flex-none basis-full md:basis-[40%] flex flex-col gap-1 items-center h-full">
   <h3 class="font-semibold text-2xl text-center">📚 Book of the Week</h3>
 
-  <div class="flex flex-col sm:flex-row sm:items-center gap-2 flex-1 w-full">
+  <div class="flex flex-col sm:flex-row sm:items-center gap-4 flex-1 w-full">
     <!-- Text -->
+    <div class="flex-1 text-center sm:text-left">
+      <p class="text-3xl font-bold">Pet</p>
+      <p class="text-xl italic mb-1">by Akwaeke Emezi</p>
     <div class="flex-1 ml-4">
       <p class="text-2xl font-bold">KINGS, QUEENS,<br> And IN-BETWEENS</p>
       <p class="text-xl italic mb-1">by Tanya Boteju</p>
@@ -126,12 +135,13 @@
     </div>
 
     <!-- Book Cover -->
-    <div class="w-28 h-40 flex-shrink-0 mt-3">
+    <div class="w-28 h-40 flex-shrink-0 mx-auto sm:mx-0">
       <a target="_blank" href="https://bookshop.org/p/books/pet-akwaeke-emezi/12112023?ean=9780593175446&next=t">
       <img src="https://images-us.bookshop.org/ingram/9781534430655.jpg?v=enc-v1" alt="Pet book cover" class="w-full h-full object-cover rounded-lg shadow-md" />
       </a>
     </div>
   </div>
+</div>
 
   <!-- Invisible height filler -->
   <div class="flex-1 hidden md:block"></div>
@@ -168,7 +178,7 @@
 
     <!-- ARC #3 -->
     <a target="_blank" href="https://www.youtube.com/watch?v=wiALRpD0Ztg&pp=ygUgbWFuIGluIHRoZSBtaXJyb3Iga2VuZHJpY2sgbGFtYXLSBwkJxwkBhyohjO8%3D" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600">
-      <img src="https://upload.wikimedia.org/wikipedia/en/9/93/Kendrick_Lamar_-_GNX.png" alt="Best Performances of 2024" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 object-bottom" />
+      <img src="images/kendrick-lamar.webp" alt="Best Performances of 2024" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 object-top" />
       <div class="absolute inset-0 bg-pink-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
         <h3 class="text-white text-xl font-bold text-center px-4">Artist OTY: - Kendrick Lamar </h3>
       </div>
@@ -239,6 +249,7 @@
 <script src="darkmode.js"></script>
 <script src="night_sky.js"></script>
 <script src="carousel.js"></script>
+<script src="hamburger_menu.js"></script>
 
 </body>
 </html>
