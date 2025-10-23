@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tajairi | Home</title>
+  <title>Tajairi </title>
+  <link rel="icon" href="Images/TajairiLogo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +32,7 @@
       <!-- Logo and Title -->
       <a href="#home" class="group flex items-center gap-3 shrink-0">
         <!-- Reverted to your original image path. Ensure this path is correct in your project. -->
-        <img src="images/TajairiLogo.png" alt="Logo" class="h-10 w-auto transition-transform group-hover:rotate-[-10deg] group-hover:scale-110 " onerror="this.onerror=null;this.src='https://placehold.co/40x40/FF5E9E/white?text=T';" />
+        <img src="Images/TajairiLogo.png" alt="Logo" class="h-10 w-auto transition-transform group-hover:rotate-[-10deg] group-hover:scale-110 " onerror="this.onerror=null;this.src='https://placehold.co/40x40/FF5E9E/white?text=T';" />
         <span class="text-2xl sm:text-3xl justify-center font-bold playfair-display-sc-bold text-black dark:text-[#FF5E9E] [text-shadow:1px_1px_3px_var(--tw-shadow-color)] shadow-gray-400/50 dark:shadow-pink-500/50">
           TAJAIRI
         </span>
@@ -50,6 +51,31 @@
    Dark Mode
 </button>
 
+<<<<<<< HEAD
+=======
+      <!-- Mobile Menu Button (Hamburger, visible on mobile) -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="p-2 rounded-full text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full right-0 w-48 mt-2">
+        <div class="bg-white/90 dark:bg-[#1a1d2c]/90 backdrop-blur-md rounded-xl shadow-lg border border-[#E5E7EB] dark:border-gray-700 overflow-hidden">
+            <a href="#home" class="block text-center py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Home</a>
+            <a href="#projects" class="block text-center py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Projects</a>
+            <a href="mailto:Tajairi@gmail.com" class="block text-center py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Contact</a>
+            <div class="border-t border-gray-200 dark:border-gray-700">
+                <button onclick="document.documentElement.classList.toggle('dark'); mobileMenu.classList.add('hidden');" class="w-full py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                    Toggle Dark Mode
+                </button>
+            </div>
+        </div>
+>>>>>>> 7ca7bb5d955dfae14d5fbdcef9b03a7a3800e4ef
     </div>
   </div>
 </nav>
@@ -65,28 +91,28 @@
     <div class="carousel w-full flex transition-transform duration-500 ease-in-out" id="carousel">
       <!-- Slide 1 -->
       <div class="carousel-item w-full shrink-0">
-        <img src="images/Otautahi.jpg" alt="Headline 1" class="w-full h-64 md:h-96 object-cover object-[center_15%] mx-auto rounded-t-xl" />
+        <img src="Images/Otautahi.jpg" alt="Headline 1" class="w-full h-64 md:h-96 object-cover object-[center_15%] mx-auto rounded-t-xl" />
         <div class="p-4">
-          <h2 class="text-white text-2xl font-semibold">Ōtākaro Avon River </h2>
+          <h2 class="text-white text-2xl font-semibold">Aotearoa | Ōtākaro Avon River </h2>
           <p class="text-white text-sm mt-1">I was shocked by how pretty Otautahi was!</p>
         </div>
       </div>
 
       <!-- Slide 2 -->
       <div class="carousel-item w-full shrink-0">
-        <img src="images/Rock_Place.jpg" alt="Headline 2" class="w-full h-64 md:h-96 object-cover mx-auto rounded-t-xl" />
+        <img src="Images/Rock_Place.jpg" alt="Headline 2" class="w-full h-64 md:h-96 object-cover mx-auto rounded-t-xl" />
         <div class="p-4">
-          <h2 class="text-white text-2xl font-semibold">Kura Tawhiti</h2>
-          <p class="text-white text-sm mt-1">A wayyyyy cooler Stonehenge</p>
+          <h2 class="text-white text-2xl font-semibold">Aotearoa | Kura Tawhiti</h2>
+          <p class="text-white text-sm mt-1">Stonehenge could never</p>
         </div>
       </div>
 
       <!-- Slide 3 -->
       <div class="carousel-item w-full shrink-0">
-        <img src="images/Somewhere_Beyond_The_Sea.jpg" alt="Headline 3" class="w-full h-64 md:h-96 object-cover object-center rounded-t-xl" />
+        <img src="Images/Somewhere_Beyond_The_Sea.jpg" alt="Headline 3" class="w-full h-64 md:h-96 object-cover object-center rounded-t-xl" />
         <div class="p-4">
-          <h2 class="text-white text-2xl font-semibold">Rotorua</h2>
-          <p class="text-white text-sm mt-1"> Or Rotovegas as they like to call it </p>
+          <h2 class="text-white text-2xl font-semibold">Aotearoa | Rotorua</h2>
+          <p class="text-white text-sm mt-1"> The smelliest town I've ever been to. Shockingly, I would return</p>
         </div>
       </div>
     </div>
@@ -99,7 +125,7 @@
     </div>
   </div>
 
-   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
   
   <!-- Song of the Week -->
   <div class="bg-[#5dd5d0] text-white p-4 rounded-xl shadow-md flex-none basis-full md:basis-[35%] flex flex-col items-center text-center h-full">
@@ -134,7 +160,11 @@
     <!-- Book Cover -->
     <div class="w-28 h-40 flex-shrink-0 mx-auto sm:mx-0">
       <a target="_blank" href="https://bookshop.org/p/books/pet-akwaeke-emezi/12112023?ean=9780593175446&next=t">
+<<<<<<< HEAD
       <img src="https://images-us.bookshop.org/ingram/9781534430655.jpg?v=enc-v1" alt="Pet book cover" class="w-full h-full object-cover rounded-lg shadow-md" />
+=======
+      <img src="Images/Pet.jpg" alt="Pet book cover" class="w-full h-full object-cover rounded-lg shadow-md" />
+>>>>>>> 7ca7bb5d955dfae14d5fbdcef9b03a7a3800e4ef
       </a>
     </div>
   </div>
@@ -153,6 +183,7 @@
 
   <!-- PROGRAMMING ARC CLUSTER -->
 <div class="space-y-4">
+<<<<<<< HEAD
   <h2 class="text-2xl font-bold text-green-500">💻 2025 Programming Projects </h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
@@ -172,6 +203,10 @@
 <div class="space-y-4 mt-12">
   <h2 class="text-2xl font-bold text-pink-500">🎵 2024 Royale Award Winners</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+=======
+  <h2 class="text-3xl font-bold text-pink-500">🎵 2024 Royale Award Winners</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+>>>>>>> 7ca7bb5d955dfae14d5fbdcef9b03a7a3800e4ef
 
     <!-- ARC #1 -->
     <a target="_blank" href="https://www.youtube.com/watch?v=KcBDKGiKBK4" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600">
@@ -183,7 +218,7 @@
     </a>
 
     <!-- ARC #2 -->
-    <a href="Articles/2024_Royale_Winners.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600">
+    <a href="Articles/2024_Royale_Winners.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600 ">
       <img src="Images/Royale_Award_MO.png" alt="Royale Award on Mount Olympus" 
       class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
       <div class="absolute inset-0 bg-pink-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -193,7 +228,7 @@
 
     <!-- ARC #3 -->
     <a target="_blank" href="https://www.youtube.com/watch?v=wiALRpD0Ztg&pp=ygUgbWFuIGluIHRoZSBtaXJyb3Iga2VuZHJpY2sgbGFtYXLSBwkJxwkBhyohjO8%3D" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600">
-      <img src="images/kendrick-lamar.webp" alt="Best Performances of 2024" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 object-top" />
+      <img src="Images/kendrick-lamar.webp" alt="Best Performances of 2024" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 object-top" />
       <div class="absolute inset-0 bg-pink-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
         <h3 class="text-white text-xl font-bold text-center px-4">Artist OTY: - Kendrick Lamar </h3>
       </div>
@@ -227,11 +262,16 @@
 
   <!-- 2023 CLUSTER -->
   <div class="space-y-4 mt-12">
+<<<<<<< HEAD
   <h2 class="text-2xl font-bold text-yellow-500">✏️ 2023 </h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+=======
+  <h2 class="text-3xl font-bold text-yellow-500">🎵 2023 </h2>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+>>>>>>> 7ca7bb5d955dfae14d5fbdcef9b03a7a3800e4ef
 
     <!-- ARC #1 -->
-    <a href="Articles/2023_Royale_Winners.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-yellow-600">
+    <a href="Articles/2023_Royale_Winners.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-yellow-600 min-h-[200px]">
       <img src="Images/RoyaleAward.png" alt="Rose Gold feminine statue withh an Afro" 
       class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
       <div class="absolute inset-0 bg-yellow-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -240,7 +280,7 @@
     </a>
 
     <!-- ARC #2 -->
-    <a href="Articles/Letter_To_Tajair.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-yellow-600">
+    <a href="Articles/Letter_To_Tajair.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-yellow-600 min-h-[200px]">
       <img src="https://preview.redd.it/bekphnqftcb41.jpg?width=1080&crop=smart&auto=webp&s=8f9410508e9179cbca41927644de18fa9e4c294c" alt="Solo Record OTY: Supernatural-Ariana Grande" 
       class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 object-top" />
       <div class="absolute inset-0 bg-yellow-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -249,7 +289,7 @@
     </a>
 
     <!-- ARC #3 -->
-    <a href="Articles/2023_Spotify_Unwrapped.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-yellow-600">
+    <a href="Articles/2023_Spotify_Unwrapped.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-yellow-600 min-h-[200px] ">
       <img src="Images/Red_Demon_Spotify.jpg" alt="Best Performances of 2024" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 " />
       <div class="absolute inset-0 bg-yellow-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
         <h3 class="text-white text-xl font-bold text-center px-4">Why I'm No Longer Releasing my Spotify Unwrapped</h3>
