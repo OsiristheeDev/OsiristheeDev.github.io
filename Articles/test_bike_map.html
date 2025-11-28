@@ -44,15 +44,15 @@
 
         // Color scale for LTS (Level of Traffic Stress)
         const ltsColors = {
-            1: '#2a9d4e', // Green - Low stress
-            2: '#7fc97f', // Light green
-            3: '#fdb462', // Orange
-            4: '#e63946', // Red - High stress
-            5: '#999999'  // Gray - Unknown
+            1: '#2ECC71', // Green - Low stress
+            2: '#FCCA46', // Yellow
+            3: '#FE7F2D', // Orange
+            4: '#942911', // Red - High stress
+            5: '#009FB7'  // Blue - Unknown
         };
 
         function getLTSColor(lts) {
-            return ltsColors[lts] || '#999999';
+            return ltsColors[lts] || '#009FB7';
         }
 
         // Define paint rules with CORRECT camelCase property names
@@ -78,8 +78,8 @@
         // Add PMTiles layer with CORRECT camelCase: paintRules, NOT paint_rules
         const pmtilesLayer = protomapsL.leafletLayer({
             url: 'https://pub-8bf68bd2143d475b8224f5d36f72ef9b.r2.dev/nyc_tiles.pmtiles',
-            paintRules: PAINT_RULES,    // <-- FIXED: was paint_rules
-            labelRules: []              // <-- ADDED: empty but specified
+            paintRules: PAINT_RULES,    
+            labelRules: []              
         });
 
         pmtilesLayer.addTo(map);
