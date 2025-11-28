@@ -133,8 +133,9 @@
                         dataLayer: 'bike_network',
                         symbolizer: new protomapsL.LineSymbolizer({
                             color: (zoom, feature) => {
-                                console.log('Feature props:', feature.props);
-                                const lts = feature.props.lts || feature.props.LTS || feature.props.lts_score;
+                               console.log('All props:', JSON.stringify(feature.props));  // <-- ADD THIS
+                                const lts = feature.props.lts;
+                                console.log('LTS value:', lts);  
                                 return getLTSColor(lts);
                             },
                             width: (zoom, feature) => {
