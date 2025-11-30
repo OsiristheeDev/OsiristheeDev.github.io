@@ -28,7 +28,7 @@
   <!-- Main Nav container -->
   <div class="relative mx-auto">
     <div class="bg-white/70 dark:bg-[#1a1d2c]/70 backdrop-blur-md border border-[#E5E7EB] dark:border-gray-700 shadow-md rounded-full px-8 py-3 flex items-center justify-between text-sm font-medium w-full">
-      
+
       <!-- Logo and Title -->
       <a href="#home" class="group flex items-center gap-3 shrink-0">
         <!-- Reverted to your original image path. Ensure this path is correct in your project. -->
@@ -38,19 +38,41 @@
         </span>
       </a>
 
-    <!-- Navigation Buttons -->
-    <div class="flex items-center gap-4">
-      <a href="#home" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Home</a>
-      <a href="#projects" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Projects</a>
-      <a href="#contact" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Contact</a>
-      <div class="h-5 w-px bg-gray-400 dark:bg-gray-600 mx-2"></div>
-      <button
-  onclick="toggleDarkMode()"
-  class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform"
->
-   Dark Mode
-</button>
+      <!-- Desktop Navigation Buttons (hidden on mobile) -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#home" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Home</a>
+        <a href="#projects" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Projects</a>
+        <a href="#contact" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Contact</a>
+        <div class="h-5 w-px bg-gray-400 dark:bg-gray-600 mx-2"></div>
+        <button
+            onclick="toggleDarkMode()"
+            class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">
+            Dark Mode
+        </button>
+      </div>
 
+      <!-- Mobile Menu Button (Hamburger, visible on mobile) -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="p-2 rounded-full text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full right-0 w-48 mt-2">
+        <div class="bg-white/90 dark:bg-[#1a1d2c]/90 backdrop-blur-md rounded-xl shadow-lg border border-[#E5E7EB] dark:border-gray-700 overflow-hidden">
+            <a href="#home" class="block text-center py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Home</a>
+            <a href="#projects" class="block text-center py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Projects</a>
+            <a href="#contact" class="block text-center py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Contact</a>
+            <div class="border-t border-gray-200 dark:border-gray-700">
+                <button onclick="toggleDarkMode(); mobileMenu.classList.add('hidden');" class="w-full py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                    Toggle Dark Mode
+                </button>
+            </div>
+        </div>
     </div>
   </div>
 </nav>
@@ -166,14 +188,41 @@
       </div>
     </a>
 
-    <!-- ARC #2 -->
-    <a target="_blank" href="Articles/test_bike_map.html" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600">
-      <img src="Images/Stressed_Out_Bike.png" alt="A picture of a stressed out map"
+    <!-- ARC #2 - Password Protected -->
+    <div id="brooklyn-card" class="relative group rounded-xl overflow-hidden shadow-lg bg-pink-600 cursor-pointer" onclick="showPasswordForm()">
+      <img id="brooklyn-img" src="Images/Stressed_Out_Bike.png" alt="A picture of a stressed out map"
       class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300 object-center" />
-      <div class="absolute inset-0 bg-green-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+      <div id="brooklyn-overlay" class="absolute inset-0 bg-green-900/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
         <h3 class="text-white text-xl font-bold text-center px-4">Brooklyn Bike Stress Map</h3>
       </div>
-    </a>
+
+      <!-- Password Form (hidden initially) -->
+      <div id="password-form" class="absolute inset-0 bg-green-900/95 flex-col items-center justify-center p-6 hidden">
+        <h3 class="text-white text-2xl font-bold text-center mb-4">🔒 Enter Password</h3>
+        <input
+          type="password"
+          id="brooklyn-password"
+          placeholder="Password"
+          class="w-full max-w-xs px-4 py-3 rounded-lg text-center text-xl font-semibold mb-4 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-white shadow-lg"
+          onkeypress="if(event.key === 'Enter') checkPassword()"
+        />
+        <div class="flex gap-3">
+          <button
+            onclick="checkPassword()"
+            class="bg-white text-green-900 px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform shadow-lg"
+          >
+            Enter
+          </button>
+          <button
+            onclick="hidePasswordForm(event)"
+            class="bg-red-500 text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform shadow-lg"
+          >
+            Cancel
+          </button>
+        </div>
+        <p id="error-message" class="text-red-300 text-sm mt-3 hidden font-bold">❌ Incorrect password</p>
+      </div>
+    </div>
     </div>
     </div>
 
@@ -275,6 +324,7 @@
 <script src="night_sky.js"></script>
 <script src="carousel.js"></script>
 <script src="hamburger_menu.js"></script>
+<script src="password_protection.js"></script>
 
 </body>
 </html>
