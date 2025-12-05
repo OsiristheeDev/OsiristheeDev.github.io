@@ -111,7 +111,7 @@ fetch('cyclist_killed_after_2015_ny.csv')
             icon: tombstoneIcon
         }).addTo(map);
         marker.bindPopup(`
-            <strong>Incident Details</strong><br>
+            <strong>Fatal Incident Details</strong><br>
             Date: ${row['crash_date']}<br>
             Cause: ${row['contributing_factor_vehicle_1']}<br>
         `);
