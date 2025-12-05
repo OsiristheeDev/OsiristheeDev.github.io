@@ -1,6 +1,6 @@
 // Password protection for Brooklyn Bike Stress Map
 const CORRECT_PASSWORD = "brooklyn2025"; // Change this to your desired password
-const TARGET_URL = "Articles/test_bike_map.html";
+const TARGET_URL = "Articles/New_York_City_Map.html";
 
 function showPasswordForm() {
   const passwordForm = document.getElementById('password-form');
