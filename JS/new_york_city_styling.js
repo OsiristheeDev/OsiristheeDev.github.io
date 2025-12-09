@@ -6,20 +6,20 @@ map.on('zoomend', function() {
 });
 
 // Add a basemap so you can see context
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap contributors © CARTO'
 }).addTo(map);
 
 const legend = L.control({position: 'topleft'});
     legend.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'legend');
         
-        div.innerHTML = '<h4>Stress Rating</h4>';
-        div.innerHTML += '<i style="background: #00FF7F"></i> LTS 1 : Comfortable for Children <br>';
-        div.innerHTML += '<i style="background: #FCCA46"></i> LTS 2 : Comfortable for Most Adults <br>';
-        div.innerHTML += '<i style="background: #FE7F2D"></i> LTS 3 : For Confident and Enthused Cyclists <br>';
-        div.innerHTML += '<i style="background: #942911"></i> LTS 4 : For Strong and Fearless Cyclist <br>';
-        div.innerHTML += '<i style="background: #009FB7"></i>  Unknown  : Not Enough Information Available  <br>';
+        div.innerHTML = '<h4>Comfort Rating</h4>';
+        div.innerHTML += '<i style="background: #00FF7F"></i> Comfort 1 : For Children <br>';
+        div.innerHTML += '<i style="background: #FCCA46"></i> Comfort 2 : For Most Adults <br>';
+        div.innerHTML += '<i style="background: #FE7F2D"></i> Comfort 3 : For Confident Cyclists <br>';
+        div.innerHTML += '<i style="background: #942911"></i> Comfort 4 : For No One <br>';
+        div.innerHTML += '<i style="background: #009FB7"></i> Comfort Unknown  : Not Enough Information Available  <br>';
         
         return div;
     };
