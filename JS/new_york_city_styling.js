@@ -18,7 +18,7 @@ const legend = L.control({position: 'topleft'});
         div.innerHTML += '<i style="background: #00FF7F"></i> Comfort 1 : For Children <br>';
         div.innerHTML += '<i style="background: #FCCA46"></i> Comfort 2 : For Most Adults <br>';
         div.innerHTML += '<i style="background: #FE7F2D"></i> Comfort 3 : For Confident Cyclists <br>';
-        div.innerHTML += '<i style="background: #942911"></i> Comfort 4 : For No One <br>';
+        div.innerHTML += '<i style="background: #942911"></i> Comfort 4 : For Fearless Cyclists  <br>';
         div.innerHTML += '<i style="background: #009FB7"></i> Comfort Unknown  : Not Enough Information Available  <br>';
         
         return div;
@@ -92,11 +92,17 @@ fetch('cyclist_killed_after_2015_ny.csv')
         return rowObject;
     });
 
+    // Adjust icon size based on screen width
+    const isMobile = window.innerWidth <= 768;
+    const iconSize = isMobile ? [40, 40] : [25, 25];
+    const iconAnchor = isMobile ? [20, 40] : [12, 25];
+    const popupAnchor = isMobile ? [0, -40] : [0, -25];
+
     const tombstoneIcon = L.icon({
         iconUrl: 'https://cdn-icons-png.flaticon.com/512/252/252129.png',
-        iconSize: [25, 25],
-        iconAnchor: [12, 25],
-        popupAnchor: [0, -25]
+        iconSize: iconSize,
+        iconAnchor: iconAnchor,
+        popupAnchor: popupAnchor
     });
 
     for (const row of data) {

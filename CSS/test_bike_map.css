@@ -32,3 +32,38 @@ body { margin: 0; padding: 0; }
     float: left;
     margin-right: 8px;
 }
+
+/* Mobile-specific styles for tombstone markers and popups */
+@media (max-width: 768px) {
+    /* Make popups larger and more readable on mobile */
+    .leaflet-popup-content-wrapper {
+        font-size: 16px !important;
+        min-width: 250px !important;
+        padding: 15px !important;
+    }
+
+    .leaflet-popup-content {
+        margin: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    .leaflet-popup-content strong {
+        font-size: 18px !important;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Make the popup tip (arrow) larger */
+    .leaflet-popup-tip {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    /* Increase close button size for easier tapping */
+    .leaflet-popup-close-button {
+        font-size: 24px !important;
+        padding: 8px !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
