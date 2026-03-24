@@ -80,6 +80,21 @@
   50% { opacity: 1; }
 }
 
+.prose a {
+  color: #FF7F50;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.prose a:hover {
+  opacity: 0.75;
+}
+
+.dark .prose a {
+  color: #FF5E9E;
+}
+
 /* Constellation dots (optional) */
 .dot {
   position: absolute;

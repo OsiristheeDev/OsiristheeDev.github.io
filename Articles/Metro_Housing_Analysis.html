@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metro Housing Analysis</title>
+  <link rel="icon" href="../Images/TajairiLogo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind config MUST come before the CDN script -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <link rel="stylesheet" href="../CSS/styles.css" />
+</head>
+
+<!-- Dark mode is applied to the <html> element -->
+<body class="bg-white text-[#111111] font-sans p-6 dark:bg-black dark-bg-stars dark:text-white scroll-smooth">
+<div class="night-sky hidden dark:block" id="nightSky"></div>
+
+<!-- Sticky Nav Bar -->
+<nav class="fixed top-4 inset-x-0 z-50 px-6 sm:px-12 md:px-24 lg:px-32">
+  <!-- Main Nav container -->
+  <div class="relative mx-auto">
+    <div class="bg-white/70 dark:bg-[#1a1d2c]/70 backdrop-blur-md border border-[#E5E7EB] dark:border-gray-700 shadow-md rounded-full px-8 py-3 flex items-center justify-between text-sm font-medium w-full">
+
+      <!-- Logo and Title -->
+      <a href="../index.html" class="group flex items-center gap-3 shrink-0">
+        <img src="../Images/TajairiLogo.png" alt="Logo" class="h-10 w-auto transition-transform group-hover:rotate-[-10deg] group-hover:scale-110 " onerror="this.onerror=null;this.src='https://placehold.co/40x40/FF5E9E/white?text=T';" />
+        <span class="text-2xl sm:text-3xl justify-center font-bold playfair-display-sc-bold text-black dark:text-[#FF5E9E] [text-shadow:1px_1px_3px_var(--tw-shadow-color)] shadow-gray-400/50 dark:shadow-pink-500/50">
+          TAJAIRI
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Buttons (hidden on mobile) -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="../index.html" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Home</a>
+        <a href="../index.html#projects" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Projects</a>
+        <a href="mailto:Tajairi@gmail.com" class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">Contact</a>
+        <div class="h-5 w-px bg-gray-400 dark:bg-gray-600 mx-2"></div>
+        <button
+            onclick="document.documentElement.classList.toggle('dark')"
+            class="bg-[#FF7F50] text-white dark:bg-white dark:text-[#1a1d2c] px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">
+            Dark Mode
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button (Hamburger, visible on mobile) -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="p-2 rounded-full text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full right-0 w-48 mt-2">
+        <div class="bg-white/90 dark:bg-[#1a1d2c]/90 backdrop-blur-md rounded-xl shadow-lg border border-[#E5E7EB] dark:border-gray-700 overflow-hidden">
+            <a href="../index.html" class="block text-center py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Home</a>
+            <a href="../index.html#projects" class="block text-center py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Projects</a>
+            <a href="mailto:Tajairi@gmail.com" class="block text-center py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Contact</a>
+            <div class="border-t border-gray-200 dark:border-gray-700">
+                <button onclick="document.documentElement.classList.toggle('dark'); mobileMenu.classList.add('hidden');" class="w-full py-3 px-4 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
+                    Toggle Dark Mode
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
+</nav>
+
+  <!-- Spacer so content doesn't hide behind sticky nav -->
+  <div class="h-10"></div>
+
+  <article class="max-w-3xl mx-auto px-6 py-16 text-[#1f2937] dark:text-white font-sans">
+
+  <!-- Meta bar -->
+  <div class="mt-3 mb-8 flex flex-wrap items-center gap-3 text-sm">
+  <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 dark:bg-orange-500/10 dark:text-orange-300 font-semibold uppercase tracking-wider">
+    Analysis
+  </span>
+
+  <span class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300">
+    <!-- calendar icon -->
+    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M8 7V3m8 4V3M3 11h18M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/>
+    </svg>
+    <time datetime="2026-03-23"><i>March 23, 2026</i></time>
+  </span>
+</div>
+
+  <!-- Headline -->
+  <h1 class="text-4xl font-extrabold text-orange-500 leading-tight">
+    Are America's Most Populous Cities Buiding Enough Homes? 
+  </h1>
+
+  <!-- Subheadline -->
+  <p class="text-lg text-gray-700 mt-2 mb-6 dark:text-gray-300">
+    <i>Using Census building permit data to find which major metros are rising to meet the housing crisis</i>
+  </p>
+
+  <!-- Article Body -->
+  <div class="prose text-lg prose-p:text-gray-800 prose-headings:text-[#1f2937] max-w-none space-y-4">
+
+  <!-- Featured Image -->
+  <div class="overflow-hidden shadow-lg mb-8">
+    <img
+      src="https://www.costar.com/_next/image?url=https%3A%2F%2Fcostar.brightspotcdn.com%2Fdims4%2Fdefault%2Fcdc1353%2F2147483647%2Fstrip%2Ftrue%2Fcrop%2F1430x953%2B0%2B0%2Fresize%2F1430x953!%2Fquality%2F100%2F%3Furl%3Dhttp%253A%252F%252Fcostar-brightspot.s3.us-east-1.amazonaws.com%252F1d%252F42%252Fc3e04b1c4c2a985dee6ffb91f12e%252Fpicture1.jpg&w=1080&q=75"
+      alt="Apartment Complex under construction in Atlanta"
+      class="w-full h-96 object-cover object-center"
+    />
+  </div>
+
+  <p class="text-sm text-gray-600 italic text-center mt-2 mb-8 dark:text-gray-400">
+  An apartment complex under construction in Atlanta. Source: (Co-Star)
+</p>
+
+<p>Americans are being pushed to the brink by the relentless cost-of-living increases. Chief among their expenses is housing, which average Americans now spend more than 30% of their annual income on.</p>
+
+<p>One of the simpler ways for policymakers to bring down the cost of housing is to allow more to be built. The Brookings Institute estimates the US needs to build nearly <a href="https://www.brookings.edu/articles/make-it-count-measuring-our-housing-supply-shortage" target="_blank">5 million homes </a>to alleviate the shortage.</p>
+
+<p>With data from the Census Building Permit Survey, a survey widely-used to determine where the most building is occurring, I examined the top 10 most populated combined statistical areas (metros) where more than 105 million Americans live to learn which major metros were building the most and least amount of homes.</p>
+
+<p>First, I pulled housing data from the most recent years 2020–2025 (2025 data is preliminary, so it could be revised up or down once the final numbers are in). This period was anomalous for housing due to the Covid-19 pandemic causing a spike in construction, so I also extracted data from 2014–2019, a more stable economic period.</p>
+
+<p>To understand how much housing there was per resident, I retrieved population data from the census for 2014–2024. 2025 population data isn't yet available, so I have not included it yet.</p>
+
+<h2 class="text-2xl font-bold text-[#1f2937] dark:text-white mt-8 mb-2">The Results</h2>
+
+<p>The Texas Titans topped the list. Dallas and Houston metros permitted more than 1.5 million units of housing combined from 2014–2025. These Texas regions and their surrounding areas allowed more housing to be built than the bottom 6 metros combined.</p>
+
+<figure class="my-6">
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <iframe src="../Data/HousingCharts/TotalHousingChart.html" height="500" style="border:none; display:block; width:100%; min-width:520px;" title="Bar chart showing total housing permitted by metro from 2014–2025"></iframe>
+  </div>
+  <figcaption class="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">Total housing units permitted across the top 10 most populated metros, 2014–2025. Source: Census Building Permits Survey.</figcaption>
+</figure>
+
+<p>It is no surprise that the Houston metro was at the top as it is notably home to the two largest <a href="https://www.houstonlanding.org/no-zoning-in-houston-provides-flexibility-complications-experts-say-why-does-it-matter/" target="_blank">cities without any zoning laws </a>(Houston and Pasadena). Make no mistake, this doesn't mean developers can build whatever, wherever though. They are still beholden to local ordinances, planning commission guidelines, and deed restrictions.</p>
+
+<p>Dallas, which has zoning, still managed to edge Houston out — likely because Dallas permitted more apartments than the Houston metro did. In fact, Dallas has been steadily permitting more apartments since 2023, with 2025 being the year they permitted the most multifamily units.</p>
+
+<figure class="my-6">
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <iframe src="../Data/HousingCharts/HousingPermitChart.html" height="500" style="border:none; display:block; width:100%; min-width:520px;" title="Stacked bar chart showing housing permitted by unit type across metros, 2014–2025"></iframe>
+  </div>
+  <figcaption class="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">Housing permitted by unit type across the top 10 metros, 2014–2025. Dallas leads in both single-family and large multifamily construction. Source: Census Building Permits Survey.</figcaption>
+</figure>
+
+<p>And the massive population growth tells you why policymakers permitted so much housing. Dallas and Houston were the only metros in the dataset where their growth exceeded 1 million. Though, the Greater Atlanta area was not too far behind, adding around 900,000 new residents.</p>
+
+<p>In contrast, the NYC area was the only metro whose population loss exceeded 750,000. Nearly all of which occurred during the first year of the pandemic when NYC was hit very hard by the <a href="https://www.nytimes.com/2020/12/03/nyregion/coronavirus-new-york.html" target="_blank"> Covid-19 pandemic </a>.</p>
+
+<p>Other major Northeastern metros were varied in their growth: DC surged from 4th to 3rd gaining more than 660,000 residents, overtaking Chicago which lost 70,000. Philadelphia grew by a more modest 200,000.</p>
+
+<figure class="my-6">
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%;">
+    <iframe src="../Data/HousingCharts/PopulationChangeOverTime.html" height="500" style="border:none; display:block; width:100%; min-width:520px;" title="Line chart showing year-over-year population changes across the top 10 most populous metros from 2014–2024"></iframe>
+  </div>
+  <figcaption class="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">Population trends across the top 10 most populous metros, 2014–2024. The Covid-19 pandemic period is highlighted. Source: Census Intercensal Population Estimates; Census Population Estimates.</figcaption>
+</figure>
+
+<p>The only West Coast metro in the top 10 — L.A. — didn't see any drop; rather, its population largely remained flat, only gaining 100k people over 10 years. Despite New York having a much larger population than L.A., they've consistently built more housing per capita than the West Coast metropolis; NYC's 10-year average being 258 per 100k residents compared to LA's rate of 162 per 100k.</p>
+
+<figure class="my-6">
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <iframe src="../Data/HousingCharts/AverageHousing.html" height="500" style="border:none; display:block; width:100%; min-width:520px;" title="Bar chart showing average housing units permitted per 100k residents by metro, 2014–2024"></iframe>
+  </div>
+  <figcaption class="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">Average housing units permitted per 100,000 residents by metro, 2014–2024. Los Angeles ranks last among the top 10. Source: Census Building Permits Survey; Census Population Estimates.</figcaption>
+</figure>
+
+<p>In fact, of the major metros, L.A. has consistently been one of the least developer-friendly, constantly permitting the least or near the least amount of housing per 100k residents of any of the top-10 metros. This trend shows no sign of abating either, with the L.A. area permitting less housing in 2025 than they did in any other year. Also worth noting: the January 2025 Palisades and Eaton fires destroyed nearly <a href="https://abc7news.com/post/year-la-area-wildfires-destroyed-thousands-homes-fewer-dozen-have-been-rebuilt/18366934/" target="_blank">13,000 homes </a> in the L.A. area, meaning the region's total housing stock won't increase by much, if at all, for that year.</p>
+
+<figure class="my-6">
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%;">
+    <iframe src="../Data/HousingCharts/HousingUnitsPer100k.html" width="800" height="770" style="border:none; display:block;" title="Line chart showing housing units permitted per 100k residents over time for each metro"></iframe>
+  </div>
+  <figcaption class="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">Housing units permitted per 100,000 residents annually by metro, 2014–2024. Source: Census Building Permits Survey; Census Population Estimates.</figcaption>
+</figure>
+
+<p>L.A. area policymakers bear the <a href="https://www.lewis.ucla.edu/research/the-unintended-consequences-of-measure-ula/" target="_blank"></a>suppressed apartment construction, while an Occidental College-led report argues the UCLA study is methodologically flawed and that it is <a href="https://www.oxy.edu/about-oxy/community-engagement/uepi/publications/ula-report-2025" target="_blank">too early to draw conclusions </a> on the mansion tax.</p>
+
+<p>The latter claim is undercut by data from Philadelphia which shows how tax policy can directly impact construction. When Philadelphia's 10-year property tax abatement — which allowed developers to avoid paying property taxes on new construction — was set to expire, developers rushed to get housing permits, resulting in an all-time <a href="https://www.inquirer.com/real-estate/housing/housing-development-permits-abatement-philadelphia-decline-20221207.html" target="_blank">high of nearly 26,000 units</a>, triple the previous year.</p>
+
+<p>What the census data also shows is that the L.A. region was the only major metro where apartment permits have fallen so sharply post-pandemic that the region now permits nearly as much single-family housing as it does multifamily housing. Of course this dataset includes areas where the mansion tax does not apply, but given that L.A. is the metro's largest and most populous city by far, city policy significantly impacts metro-level trends — just as in Philadelphia's case. This is further supported by city permit data where you can see this same <a href="https://www.rand.org/pubs/commentary/2025/04/why-is-it-so-expensive-to-build-affordable-homes-in.html" target="_blank"></a>decline.</p>
+
+
+<figure class="my-6">
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%;">
+    <iframe src="../Data/HousingCharts/SingleFamilyApartmentChart.html" width="1300" height="1520" style="border:none; display:block;" title="Chart comparing single-family and apartment permit trends over time"></iframe>
+  </div>
+  <figcaption class="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">Single-family vs. multifamily permit trends by metro over time. Source: Census Building Permits Survey.</figcaption>
+</figure>
+
+<p>L.A. area residents will have to wait and see if 2026 brings relief. Data is beginning to trickle in for 2026, but so far the <a href="https://www.census.gov/construction/bps/msamonthly.html" target="_blank">total number of permitted units is up </a>compared to 2024, while the number of apartment structures is down. It's unclear whether this reflects a few large multifamily buildings being built or broader renewed developer interest in the market.</p>
+
+<p>The data across the US's top 10 major metros reveals patterns that tell a consistent story. The five metros that saw the most population growth closely mirrored the metros that permitted the most housing. Meanwhile, in the L.A. region, population growth and apartment construction have continued to stagnate while L.A. area renters are burdened with a <a href="https://constructioncoverage.com/research/cities-with-the-most-expensive-rents" target="_blank">median rent price of $2,953 a month</a>. There is reason for cautious optimism: the California Legislature passed SB 79 last year, which goes into effect July 1st, automatically upzoning areas near public transit to allow for more apartments to be built. Unfortunately for renters, <a href="https://www.politico.com/news/2026/02/10/californias-blockbuster-housing-legislation-faces-rocky-rollout-00772507" target="_blank">L.A. area policymakers continue to fight it.</a></p>
+
+  </div>
+</article>
+
+<script src="../JS/darkmode.js"></script>
+<script src="../JS/night_sky.js"></script>
+<script src="../JS/hamburger_menu.js"></script>
+
+</body>
+</html>
