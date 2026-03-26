@@ -18,6 +18,37 @@
     };
   </script>
   <link rel="stylesheet" href="../CSS/styles.css" />
+
+  <style>
+    /* Landscape prompt — only shown on small screens in portrait */
+    .landscape-prompt {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: #FF7F50;
+      color: white;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    }
+    .landscape-prompt button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.25rem;
+      cursor: pointer;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    @media (max-width: 768px) and (orientation: portrait) {
+      .landscape-prompt { display: block; }
+    }
+  </style>
 </head>
 
 <!-- Dark mode is applied to the <html> element -->
@@ -232,6 +263,12 @@ function scaleCharts() {
 window.addEventListener('load', scaleCharts);
 window.addEventListener('resize', scaleCharts);
 </script>
+<!-- Landscape orientation prompt for mobile -->
+<div class="landscape-prompt" id="landscapePrompt">
+  &#x1F4F1; Rotate your phone to landscape mode for the best viewing experience
+  <button onclick="document.getElementById('landscapePrompt').style.display='none'" aria-label="Dismiss">&times;</button>
+</div>
+
 <script src="../JS/darkmode.js"></script>
 <script src="../JS/night_sky.js"></script>
 <script src="../JS/hamburger_menu.js"></script>
